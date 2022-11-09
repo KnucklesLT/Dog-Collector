@@ -61,29 +61,40 @@
     </div>
     <h3>Add a Feeding</h3>
     <form
+      action="{% url 'add_feeding' dog.id %}"
       method="post" 
       class="subsection-content"
       autocomplete='off'
     >
+      {% if dog.fed_for_today %}
+        <p class="fed">{{dog.name}} has been fed all their meals for today!</p>
+      {% else %}
+        <p class="unfed">{{dog.name}} might be hungry!</p>
+      {% endif %}
       {% csrf_token %}
       {{ feeding_form.as_p }}
       <button type="submit" class="btn submit">Add Feeding</button>
     </form>
     <h3>Past Feedings</h3>
-    {% comment %} New code above {% endcomment %}
-    <table>
-      <thead>
-        <tr><th>Date</th><th>Meal</th></tr>
-      </thead>
-      <tbody>
-        {% for feeding in dog.feeding_set.all %}
-          <tr>
-            <td>{{feeding.date}}</td>
-            <td>{{feeding.get_meal_display}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    {% if dog.feeding_set.all.count %}
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Meal</th></tr>
+        </thead>
+        <tbody>
+          {% for feeding in dog.feeding_set.all %}
+            <tr>
+              <td>{{feeding.date}}</td>
+              <td>{{feeding.get_meal_display}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <div class="subsection-content">
+        <p>{{dog.name}} has never been fed 😔</p>
+      </div>
+    {% endif %}
   </section>
 </div>
 
