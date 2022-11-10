@@ -149,12 +149,12 @@ nav li {
 }
 
 .page-header img {
-  height: 40px;
+  height: 20px;
   margin-left:15px;
 }
 
 .page-header img:first-of-type {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .page-content {
@@ -206,11 +206,11 @@ nav li {
   
   .page-header img {
     height: 50px;
-    margin-left:20px;
+    margin-left:10px;
   }
   
   .page-header img:first-of-type {
-    margin-left: 25px;
+    margin-left: 15px;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
