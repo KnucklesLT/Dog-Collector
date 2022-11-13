@@ -7,9 +7,10 @@
 }
 
 .dog-img {
-  width: 75%;
-  max-width: 350px;
-}
+    width: 25%;
+    max-width: 250px;
+    margin-right: 25px;
+  }
 
 .usr-img {
   width: 100%;
@@ -196,7 +197,7 @@
   }
 
   .dog-img {
-    width: 10% !important;
+    width: 25%;
     max-width: 250px;
     margin-right: 25px;
   }
