@@ -210,7 +210,7 @@ nav li {
   }
   
   .page-header img:first-of-type {
-    margin-left: 15px;
+    margin-left: 5px;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
